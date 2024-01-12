@@ -1,0 +1,9 @@
+Anil Trivedi,Physics Faculty
+Reshma Pillai,Mathematics faculty
+Geetha Velayudhan,English Faculty
+Nimesh Ravalji,Chemistry Faculty
+Hitesh Patel,Computer Faculty
+Rama Parmar,Gujarati Faculty
+Kavita Madam,Physical Education Teacher
+Satya Ramesh,Princial And Psychology Faculty
+Salma Paleja,Vice Principal And GFC Teacher

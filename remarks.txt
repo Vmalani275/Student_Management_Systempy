@@ -1,0 +1,34 @@
+Ani, 89%, Remarks:excellent
+Apurva, 80%, Remarks:Good  
+Arth, 76%, Remarks:Good    
+Darsh, 72%, Remarks:Average
+Drima, 81%, Remarks:Good   
+Heer, 78%, Remarks:Good    
+Het, 75%, Remarks:Good
+Jiya, 93%, Remarks:Excellent
+Kavya, 70%, Remarks:Average
+Krish Patel, 69%, Remarks:Average
+Krish Lad, 85%, Remarks:Excellent
+Manthan, 84%, Remarks:Good
+Mihir, 83%, Remarks:Good
+Nabeel, 65%, Remarks:Average
+Nirja, 83%, Remarks:Good
+Om, 70%, Remarks:Average
+Prachi, 90%, Remarks:Excellent
+Pramit, 70%, Remarks:Average
+Preet, 70%, Remarks:Average
+Preya, 70%, Remarks:Average
+Prit, 94%, Remarks:Excellent
+Rutik, 70%, Remarks:Average
+Samarth, 91%, Remarks:Excellent
+Soumyajit, 75%, Remarks:Good
+Tanay, 79%, Remarks:Good
+Tanvi, 95%, Remarks:Excellent
+Tirth, 92%, Remarks:Excellent
+Tithi, 77%, Remarks:Good
+Vansh, 85%, Remarks:Excellent
+Vardhan, 75%, Remarks:Good
+Veer, 88%, Remarks:Excellent
+Vishva, 93%, Remarks:Excellent
+Yashvi Sevak, 92%, Remarks:Excellent
+Yashvi Mehta, 87%, Remarks:Excellent
