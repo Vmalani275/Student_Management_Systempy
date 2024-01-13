@@ -1,4 +1,9 @@
 import pickle
+import os
+def get_files_needed_path(filename):
+    current_path = os.path.dirname(os.path.abspath(__file__))
+    files_needed_path = os.path.join(current_path, "Files_Needed", filename)
+    return files_needed_path
 def adminlogin(x):
     adminnames=['vansh','krish','manthan','mihir']
     unames = ['020705', '090605', '060805','170106']
@@ -29,7 +34,8 @@ def staffloginwithpass(z):
     teachnames=['Anil Trivedi','Nimesh Ravalji','Reshma Pillai','Hitesh Patel','Salma Paleja','Satya Ramesh','Geetha Velayudhan']
     unames = ['anil', 'nimesh', 'reshma','hitesh','salma','satya','rama','geetha']
     passwords=['anitri','nimrav','respill','hitpat','salpal','satram','geevel']
-    staffdat=open("teach.txt",'r')
+    file_path=get_files_needed_path("teach.txt")
+    staffdat=open(file_path,'r')
     lines=staffdat.readlines()
     tech=[]
     namecap=z.capitalize()
@@ -111,7 +117,8 @@ while True:
         ''')
             teachchoice=input("please enter your choice:")
             if teachchoice=='1':
-                stufile=open("stu.dat","rb")
+                file_path=get_files_needed_path("stu.dat")
+                stufile=open(file_path,"rb")
                 try:
                     while True:
                         data=pickle.load(stufile)
@@ -119,7 +126,8 @@ while True:
                 except EOFError:
                     stufile.close()
             elif teachchoice=='2':
-                    stuper=open("names_with_percentage.dat","rb")
+                    stuper_path=get_files_needed_path("names_with_percentage.dat")
+                    stuper=open(stuper_path,"rb")
                     try:
                         while True:
                             percent=pickle.load(stuper)
@@ -127,7 +135,8 @@ while True:
                     except EOFError:
                         stuper.close()
             elif teachchoice=="3":
-                stuattendence=open("attendence.dat","rb")
+                attend_path=get_files_needed_path("attendence.dat")
+                stuattendence=open(attend_path,"rb")
                 try:
                     while True:
                         attendence=pickle.load(stuattendence)
@@ -135,9 +144,12 @@ while True:
                 except EOFError:
                     stuattendence.close()
             elif teachchoice=="4":
-                stufile1=open("stu.txt")
-                stureview=open('remarks.txt','w')
-                stupercent=open("names_with_percentage.txt",'r')
+                file1_path=get_files_needed_path("stu.txt")
+                stufile1=open(file1_path)
+                file1_path=get_files_needed_path("remarks.txt")
+                stureview=open(file1_path,'w')
+                file1_path=get_files_needed_path("names_with_percentage.txt")
+                stupercent=open(file1_path,'r')
                 ans='y'
                 while ans=='y':
                     str=stufile1.readline()
@@ -149,7 +161,8 @@ while True:
                     ans=input("want to enter more records?(y/n)")
                 stureview.close()
             elif teachchoice=="5":
-                stufile=open("remarks.dat","rb")
+                remarks_path=get_files_needed_path("remarks.dat")
+                stufile=open(remarks_path,"rb")
                 try:
                     while True:
                         data=pickle.load(stufile)
@@ -187,8 +200,10 @@ while True:
             elif choicestud=='*':
                 goodbye()
             elif choicestud=="1":
-                stufile=open('stu.txt','r')
-                namefile=open('names.txt','r')
+                file1_path=get_files_needed_path("stu.txt")
+                stufile=open(file1_path,'r')
+                file1_path=get_files_needed_path("names.txt")
+                namefile=open(file1_path,'r')
                 lines=namefile.readlines()
                 index=0
                 stu=[]
@@ -235,9 +250,12 @@ while True:
                     else:
                         print("The name entered does not match with the rollnumber. Please try again")
             elif choicestud=="2":
-                admissionsfile=open("admissions.txt","r")
-                stufile=open("stu.txt",'r')
-                admitnames=open("admitnames.txt","w")
+                file1_path=get_files_needed_path("admissions.txt")
+                admissionsfile=open(file1_path,"r")
+                file1_path=get_files_needed_path("stu.txt")
+                stufile=open(file1_path,'r')
+                file1_path=get_files_needed_path("admitnames.txt")
+                admitnames=open(file1_path,"w")
                 lengthadmissions=len(admissionsfile.readlines())
                 print(lengthadmissions)
                 length=len(stufile.readlines())+lengthadmissions
@@ -248,7 +266,8 @@ while True:
                 dob=input("Please enter your date of birth in dd/mm/yyyy format:")
                 gen=input("Please enter your gender as Female/Male:")
                 rec=name+","+rollnumber+","+dob+","+gen+"\n"
-                admissionsfile=open("admissions.txt","a+")
+                file1_path=get_files_needed_path("admissions.txt")
+                admissionsfile=open(file1_path,"a+")
                 admissionsfile.write(rec)
                 admissionsfile.close()
                 admitnames.close()
@@ -273,7 +292,9 @@ while True:
                         elif studentchoice=="*":
                             goodbye()
                         elif studentchoice=="1":
-                            percentages=open("stu_percentage.txt","r")
+                            file1_path=get_files_needed_path("stu_percentage.txt")
+                            percentages=open(file1_path,"r")
+                            file1_path=get_files_needed_path("stu.txt")
                             stufile=open("stu.txt","r")
                             stu=[]
                             index=0
@@ -288,8 +309,10 @@ while True:
                                 print("Your 10th std percentage is",str(stu[i])[2:-1],"%")
                                 print()
                         elif studentchoice=="2":
-                            attendence=open("attendence.txt","r")
-                            stufile=open("stu.txt","r")
+                            file1_path=get_files_needed_path("attendence.txt")
+                            attendence=open(file1_path,"r")
+                            file1_path=get_files_needed_path("stu.txt")
+                            stufile=open(file1_path,"r")
                             stu=[]
                             index=0
                             lines=attendence.readlines()
@@ -302,8 +325,10 @@ while True:
                             for i in range(linelen):
                                 print("Your attendence is",str(stu[i])[2:-1])
                         elif studentchoice=="3":
-                            remarks=open("remarks.txt","r")
-                            stufile=open("stu.txt","r")
+                            file1_path=get_files_needed_path("remarks.txt")
+                            remarks=open(file1_path,"r")
+                            file1_path=get_files_needed_path("stu.txt")
+                            stufile=open(file1_path,"r")
                             stu=[] 
                             index=0
                             lines=remarks.readlines()
@@ -336,8 +361,8 @@ while True:
                 *.Exit the program:''')
                 adminchoices=(input("Enter your choice:"))
                 if adminchoices=="1":
-                        file_name = "admissions.txt"
-                        file_name2= "admitnames.txt"
+                        file_name = get_files_needed_path("admissions.txt")
+                        file_name2= get_files_needed_path("admitnames.txt")
                         with open(file_name) as f:
                             for line in f:
                                 print(line.strip())
@@ -352,8 +377,10 @@ while True:
                         adminchoice=input("Would you like to approve any applications?:")
                         if adminchoice=="y":
                             applicationchoice=(input("Enter the rollnumber of the student whose application you want to approve:"))
-                            existingnames=open("names.txt")
-                            existingstu=open("stu.txt")
+                            file1_path=get_files_needed_path("names.txt")
+                            existingnames=open(file1_path)
+                            file1_path=get_files_needed_path("stu.txt")
+                            existingstu=open(file1_path)
                             existingdata=len(existingstu.readlines())
                             existingnamesdata=len(existingnames.readlines())
                             index=index1=0
@@ -373,15 +400,19 @@ while True:
                             print(adddata)
                             str1=addname[0]
                             print(addname)
-                            stuname=open("names.txt","a")
+                            file1_path=get_files_needed_path("names.txt")
+                            stuname=open(file1_path,"a")
                             stuname.write(str1)
                             stuname.close()
-                            stufile=open("stu.txt","a")
+                            file1_path=get_files_needed_path("stu.txt")
+                            stufile=open(file1_path,"a")
                             stufile.write(str)
                             stufile.close()
-                            admission123=open("admissions.txt","w")
+                            file1_path=get_files_needed_path("admissions.txt")
+                            admission123=open(file1_path,"w")
                             admission123.close()
-                            admitnames1=open("admitnames.txt","w")
+                            file1_path=get_files_needed_path("admitnames.txt")
+                            admitnames1=open(file1_path,"w")
                             admitnames1.close()
                         elif adminchoice=="n" or adminchoice=="N" or adminchoice=="No" or adminchoice=="no":
                                 pass    
